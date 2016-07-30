@@ -3,7 +3,7 @@
 ### Inventory
 ![Inventory Diagram](../images/sumo-inventory-layout-labeled.jpg)
 
-1. Battery box with 4 AA batteries. A single AA battery provides a 1.5V source, delivered at 700mA; when connected in series, 4 AA batteries provide 6V, delivered at 700mA. All three of the boards can operate with 6V; the Electric Imp and Spark Core will regulate to 3.3V and the Arduino Uno will regulate to 5V. The servos included in the kit operate at 6V.
+1. Battery box with 4 AA batteries. A single AA battery provides a 1.5V source, delivered at 700mA; when connected in series, 4 AA batteries provide 6V, delivered at 700mA. The Particle Photon will regulate to 3.3V. The servos included in the kit operate at 6V.
 2. Front panel
 3. Photoresistor, or light sensor. This can be sourced from the ARDX Kit and will be used in a later customization of the bot.
 4. LEDs: one green and one red. These are sourced from the ARDX Kit and will be used in a later customization of the bot.
@@ -26,39 +26,33 @@ Before proceeding to the assembly step, there are three major preparatory tasks 
 2. Install Node.js modules from npm.
 
 ```js
-npm init (complete the initialization)
-npm install johnny-five
-npm install spark-io, npm install -g particle-cli
+npm init // follow the wizard to create the package.json file
+npm install johnny-five particle-io
 
 ```
 
-3. Setup and connection of controller board.
-Particle Core (requires Internet connected Wi-Fi)
-
-  - `particle setup`: this process will set up an account and claim the Particle Core. (More commands and information available here: particle-cli)
-
-  - `particle flash REPLACE_WITH_DEVICE_ID voodoo`: this will flash the VoodooSpark firmware to the Spark Core with the provided device id. The built-in LED will flash magenta during the upload.
-
-  - Once flashing is complete (as indicated by the built-in LED pulsing cyan), this terminal can closed.
-
-4. Calibrate the Continuous Servos.
+3. Calibrate the Continuous Servos.
 
 Missing or skipping this step is a direct path to failure.
 
 When a continuous servo’s idle pulse is not calibrated to the available PWM range of the controller board, its behavior will be erratic and uncontrollable. Calibration is simple: send the known idle pulse to the servo and adjust the built-in potentiometer until the servo horn comes to a complete stop. If the servo is not moving when the idle pulse is written to the servo, then it’s safe to assume that the servo is already calibrated. To confirm, adjust the built-in potentiometer in clock-wise and counter clock-wise directions; the horn should respond by turning in the corresponding direction.
 
-To calibrate the servos that came with the SumoBot kit, create a new file called calibrate.js containing the program for the controller board you’re setting up below. The purpose of the program is to connect to the board, initialize a continuous servo instance with the Servo.Continuous class and immediately call the instance’s stop method (which will send the idle pulse to the servo)
+To calibrate the servos that came with the SumoBot kit, we will create a new file called calibrate.js
+
+`touch calibrate.js`
+
+This file will containing the program for the controller board you’re setting up below. The purpose of the program is to connect to the board, initialize a continuous servo instance with the Servo.Continuous class and immediately call the instance’s stop method (which will send the idle pulse to the servo)
 
 ![Configure Servos](../images/continuous-calibration-spark.png)
 
 ```
 // calibrate.js
 var five = require("johnny-five");
-var Spark = require("spark-io");
+var Particle = require("particle-io");
 var board = new five.Board({
-  io: new Spark({
-    token: "token",
-    deviceId: "device id"
+  io: new Particle({
+    token: "token", // put your token here
+    deviceId: "device id" // get the id of your device with particle list
   })
 });
 board.on("ready", function() {

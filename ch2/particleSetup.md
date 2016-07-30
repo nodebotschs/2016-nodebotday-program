@@ -46,7 +46,13 @@ To do this:
   - when the particle starts blinking yellow, you can release the mode button and it is now ready to flash
 
 ```
-particle flash --usb firmware/voodoospark.cpp --force
+particle cloud flash --usb firmware/voodoospark.cpp --force
+```
+
+or alternatively you can do it over wifi once you have your particle setup to connect to the Internet
+
+```
+particle cloud flash <deviceId> firmware/voodoospark.cpp
 ```
 
 ### 8. Get your Device ID and Access Token
