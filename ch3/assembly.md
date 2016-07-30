@@ -39,7 +39,9 @@ When a continuous servo’s idle pulse is not calibrated to the available PWM ra
 
 To calibrate the servos that came with the SumoBot kit, we will create a new file called calibrate.js
 
-`touch calibrate.js`
+`touch calibrate.js` - this is if you're on a mac
+
+if you're on windows, you'll simply need to create a new file called `calibrate.js` in the folder you created
 
 This file will containing the program for the controller board you’re setting up below. The purpose of the program is to connect to the board, initialize a continuous servo instance with the Servo.Continuous class and immediately call the instance’s stop method (which will send the idle pulse to the servo)
 
