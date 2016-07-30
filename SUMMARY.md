@@ -1,0 +1,17 @@
+# NodeBots Day Program 2015
+
+* [Robots are fun?](ch1/README.md)
+* [Schedule of Activities](ch1/schedule.md)
+* [Particle Core Development Setup](ch2/README.md)
+    * [Install Node.js and Particle CLI](ch2/installation.md)
+    * [Particle Core Setup](ch2/particleSetup.md)
+* [Sumobot Instructions](ch3/README.md)
+    * [Hello World](ch3/helloworld.md)
+    * [Assembly](ch3/assembly.md)
+    * [Connecting the brain (Particle Core)](ch3/connectParticleCore.md)
+* [Coding Up Your New Robot!](ch4/README.md)
+    * [Stop & Go](ch4/stopandgo.md)
+    * [Lightbot](ch4/lightbot.md)
+* [Resources/Links for Making Robots](ch5/README.md)
+* [What Now? What to do when Robot comes home.](ch6/README.md)
+* [Special Thanks and Sponsors](ch7/README.md)
