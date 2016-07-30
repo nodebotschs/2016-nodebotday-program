@@ -380,7 +380,8 @@ To do this:</p><ul><li>Press on both buttons
 </li>
 <li>when the particle starts blinking yellow, you can release the mode button and it is now ready to flash
 </li></ul>
-<pre><code>particle flash --usb firmware/voodoospark.cpp --force</code></pre>
+<pre><code>particle cloud flash --usb firmware/voodoospark.cpp --force</code></pre>
+<p>or alternatively you can do it over wifi once you have your particle setup to connect to the Internet</p><pre><code>particle cloud flash &lt;deviceId&gt; firmware/voodoospark.cpp</code></pre>
 <h3 id="8-get-your-device-id-and-access-token">8. Get your Device ID and Access Token</h3><blockquote><p>To get your device id simply Run</p></blockquote><pre><code>particle list</code></pre>
 <blockquote><p>To get your access token</p></blockquote><p>In you home directory there should be a folder called <code>.particle</code> and in that folder a file called <code>particle.config.json</code> - in that file should be your access token.</p>
                                 
@@ -425,7 +426,7 @@ To do this:</p><ul><li>Press on both buttons
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Particle Core Setup","level":"1.4.2","depth":2,"next":{"title":"Sumobot Instructions","level":"1.5","depth":1,"path":"ch3/README.md","ref":"ch3/README.md","articles":[{"title":"Hello World","level":"1.5.1","depth":2,"path":"ch3/helloworld.md","ref":"ch3/helloworld.md","articles":[]},{"title":"Assembly","level":"1.5.2","depth":2,"path":"ch3/assembly.md","ref":"ch3/assembly.md","articles":[]},{"title":"Connecting the brain (Particle Core)","level":"1.5.3","depth":2,"path":"ch3/connectParticleCore.md","ref":"ch3/connectParticleCore.md","articles":[]}]},"previous":{"title":"Install Node.js and Particle CLI","level":"1.4.1","depth":2,"path":"ch2/installation.md","ref":"ch2/installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch2/particleSetup.md","mtime":"2016-07-30T04:12:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-07-30T03:33:37.590Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Particle Core Setup","level":"1.4.2","depth":2,"next":{"title":"Sumobot Instructions","level":"1.5","depth":1,"path":"ch3/README.md","ref":"ch3/README.md","articles":[{"title":"Hello World","level":"1.5.1","depth":2,"path":"ch3/helloworld.md","ref":"ch3/helloworld.md","articles":[]},{"title":"Assembly","level":"1.5.2","depth":2,"path":"ch3/assembly.md","ref":"ch3/assembly.md","articles":[]},{"title":"Connecting the brain (Particle Core)","level":"1.5.3","depth":2,"path":"ch3/connectParticleCore.md","ref":"ch3/connectParticleCore.md","articles":[]}]},"previous":{"title":"Install Node.js and Particle CLI","level":"1.4.1","depth":2,"path":"ch2/installation.md","ref":"ch2/installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch2/particleSetup.md","mtime":"2016-07-30T05:02:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-07-30T05:24:36.358Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -433,10 +434,6 @@ To do this:</p><ul><li>Press on both buttons
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
