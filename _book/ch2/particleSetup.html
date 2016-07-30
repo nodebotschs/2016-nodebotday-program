@@ -360,25 +360,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="particle-core-setup">Particle Core Setup</h1><blockquote><p>We want to setup the particle core via usb.</p></blockquote><ol><li>Plug in your usb cable to your computer and the particle core.
+                                <h1 id="particle-core-setup">Particle Core Setup</h1><blockquote><p>We want to setup the particle core via usb.</p></blockquote><h3 id="1-plug-in-your-usb-cable-to-your-computer-and-the-particle-core">1. Plug in your usb cable to your computer and the particle core.</h3><h3 id="2-run-particle-cli-setup">2. Run particle-cli setup</h3><pre><code>particle setup</code></pre>
+<h3 id="3-enter-your-email-address-and-password-this-will-create-an-account-on-particleio">3. Enter your email address and password, this will create an account on particle.io.</h3><h3 id="4-detect-your-wifi-you-should-have-a-handout-that-contains-the-wifi-info-use-it-to-send-your-particle-core-the-wifi-information">4. Detect your wifi, you should have a handout that contains the wifi info, use it to send your particle core the wifi information.</h3><p>You should see the core light go from blinking blue to breathing cyan:</p><p><a href="http://docs.particle.io/core/connect/" target="_blank">http://docs.particle.io/core/connect/</a></p><p>If you get any errors please let one of the mentors know.</p><h3 id="5-flash-the-core">5. Flash the core</h3><blockquote><p>You will need to have dfu-util installed to load firmware to a usb connected device.</p><ul><li>OSX dfu-util
+with homebrew:
+<code>brew install dfu-util</code>
 </li>
-<li>Run particle-cli setup
-</li></ol>
-<pre><code class="lang-sh">particle setup</code></pre>
-<ol><li>Enter your email address and password, this will create an account on particle.io.
+<li>Linux
 </li>
-<li>Detect your wifi, you should have a handout that contains the wifi info, use it to send your particle core the wifi information.
-</li></ol>
-<p>You should see the core light go from blinking blue to breathing cyan:</p><p><a href="http://docs.particle.io/core/connect/" target="_blank">http://docs.particle.io/core/connect/</a></p><p>If you get any errors please let one of the mentors know.</p><ol><li>Flash the core
-</li></ol>
-<blockquote><p>Once your particle core is connected via wifi, we need to flash the core with the voodoospark cpp file</p></blockquote><ol><li>Checkout voodoospark
-</li></ol>
-<pre><code>git clone  https://github.com/voodootikigod/voodoospark.git
-cd voodoospark
-particle flash --usb firmware/voodoospark.cpp</code></pre>
-<ol><li>Get your Device ID and Access Token
-</li></ol>
-<blockquote><p>To get your device id simply Run</p></blockquote><pre><code>particle list</code></pre>
+<li>windows
+<a href="https://community.particle.io/t/tutorial-installing-dfu-driver-on-windows-24-feb-2015/3518" target="_blank">https://community.particle.io/t/tutorial-installing-dfu-driver-on-windows-24-feb-2015/3518</a>
+Once your particle core is connected via wifi, we need to flash the core with the voodoospark cpp file
+</li></ul>
+</blockquote><h3 id="6-checkout-voodoospark">6. Checkout voodoospark</h3><pre><code>git clone  https://github.com/voodootikigod/voodoospark.git
+cd voodoospark</code></pre>
+<h3 id="7-flashing-the-voodoospark-firmware">7. Flashing the voodoospark firmware</h3><p>Before flashing the firmware you will need to get your particle flashing yellow so that it can be detected
+To do this:</p><ul><li>Press on both buttons
+</li>
+<li>release the reset button while still pressing on the mode button
+</li>
+<li>when the particle starts blinking yellow, you can release the mode button and it is now ready to flash
+</li></ul>
+<pre><code>particle flash --usb firmware/voodoospark.cpp --force</code></pre>
+<h3 id="8-get-your-device-id-and-access-token">8. Get your Device ID and Access Token</h3><blockquote><p>To get your device id simply Run</p></blockquote><pre><code>particle list</code></pre>
 <blockquote><p>To get your access token</p></blockquote><p>In you home directory there should be a folder called <code>.particle</code> and in that folder a file called <code>particle.config.json</code> - in that file should be your access token.</p>
                                 
                                 </section>
@@ -422,7 +425,7 @@ particle flash --usb firmware/voodoospark.cpp</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Particle Core Setup","level":"1.4.2","depth":2,"next":{"title":"Sumobot Instructions","level":"1.5","depth":1,"path":"ch3/README.md","ref":"ch3/README.md","articles":[{"title":"Hello World","level":"1.5.1","depth":2,"path":"ch3/helloworld.md","ref":"ch3/helloworld.md","articles":[]},{"title":"Assembly","level":"1.5.2","depth":2,"path":"ch3/assembly.md","ref":"ch3/assembly.md","articles":[]},{"title":"Connecting the brain (Particle Core)","level":"1.5.3","depth":2,"path":"ch3/connectParticleCore.md","ref":"ch3/connectParticleCore.md","articles":[]}]},"previous":{"title":"Install Node.js and Particle CLI","level":"1.4.1","depth":2,"path":"ch2/installation.md","ref":"ch2/installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch2/particleSetup.md","mtime":"2016-07-30T02:49:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-07-30T02:58:28.614Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Particle Core Setup","level":"1.4.2","depth":2,"next":{"title":"Sumobot Instructions","level":"1.5","depth":1,"path":"ch3/README.md","ref":"ch3/README.md","articles":[{"title":"Hello World","level":"1.5.1","depth":2,"path":"ch3/helloworld.md","ref":"ch3/helloworld.md","articles":[]},{"title":"Assembly","level":"1.5.2","depth":2,"path":"ch3/assembly.md","ref":"ch3/assembly.md","articles":[]},{"title":"Connecting the brain (Particle Core)","level":"1.5.3","depth":2,"path":"ch3/connectParticleCore.md","ref":"ch3/connectParticleCore.md","articles":[]}]},"previous":{"title":"Install Node.js and Particle CLI","level":"1.4.1","depth":2,"path":"ch2/installation.md","ref":"ch2/installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch2/particleSetup.md","mtime":"2016-07-30T04:12:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-07-30T03:33:37.590Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -430,6 +433,10 @@ particle flash --usb firmware/voodoospark.cpp</code></pre>
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
